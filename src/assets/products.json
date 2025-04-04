@@ -1,31 +1,31 @@
 [
     {
         "name": "Product 1",
-        "category": "Description for Product 1",
+        "category": "category 1",
         "price": 19.99,
         "createdAt": "2023-10-01T12:00:00Z"
     },
     {
         "name": "Product 2",
-        "category": "Description for Product 2",
+        "category": "category 2",
         "price": 29.99,
         "createdAt": "2023-10-01T12:00:00Z"
     },
     {
         "name": "Product 3",
-        "category": "Description for Product 3",
+        "category": "category 3",
         "price": 39.99,
         "createdAt": "2023-10-01T12:00:00Z"
     },
     {
         "name": "Product 4",
-        "category": "Description for Product 4",
+        "category": "category 4",
         "price": 49.99,
         "createdAt": "2023-10-01T12:00:00Z"
     },
     {
         "name": "Product 5",
-        "category": "Description for Product 5",
+        "category": "category 5",
         "price": 59.99,
         "createdAt": "2023-10-01T12:00:00Z"
     }
