@@ -1,0 +1,49 @@
+<div class="product-list-container">
+  <header class="header">
+    <h1>Product Management</h1>
+    <div class="header-actions">
+      <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+  </header>
+  
+  <div class="content-container">
+    <div class="list-header">
+      <h2>Products</h2>
+      <button *appHasRole="'manager'" class="add-button" (click)="addProduct()">Add Product</button>
+    </div>
+    
+    <div class="product-table-container">
+      <table class="product-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products$ | async">
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.createdAt | timeAgo }}</td>
+            <td class="actions-cell">
+              <button class="action-button edit" (click)="editProduct(product.id)">Edit</button>
+              <button 
+                *appHasRole="'manager'" 
+                class="action-button delete" 
+                (click)="deleteProduct(product.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="(products$ | async)?.length === 0">
+            <td colspan="5" class="no-data">No products available</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
